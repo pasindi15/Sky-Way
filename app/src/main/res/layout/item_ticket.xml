@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="14dp"
+    android:background="@drawable/ticket2"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/topRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/departureTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7:05 AM"
+                android:textStyle="bold"
+                android:textColor="@color/dark_blue"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/departureCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="YUL"
+                android:textAllCaps="true"
+                android:textColor="@color/dark_blue"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/departureCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Montreal, Canada"
+                android:textColor="@color/dark_blue"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/departureAirport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pierre Elliott Trudeau Intl"
+                android:textColor="@color/dark_blue"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/planeIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_flight"
+            android:tint="@color/dark_blue"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="end">
+            <TextView
+                android:id="@+id/arrivalTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8:05 AM"
+                android:textStyle="bold"
+                android:textColor="@color/dark_blue"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/arrivalCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="YUL"
+                android:textAllCaps="true"
+                android:textColor="@color/dark_blue"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/arrivalCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Toronto, Canada"
+                android:textColor="@color/dark_blue"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/arrivalAirport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pearson Intl"
+                android:textColor="@color/dark_blue"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/dashedDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/topRow"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/darker_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dashedDivider"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/airline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Air Canada"
+            android:textColor="@color/dark_blue"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$ 1,400"
+            android:textColor="@color/dark_blue"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>

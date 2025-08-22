@@ -1,0 +1,962 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:paddingBottom="120dp">
+
+            <!-- Profile section with circular profile picture and greeting -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- Circular profile picture -->
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/profile_pic"
+                    android:background="@drawable/circle_profile_background"
+                    android:scaleType="centerCrop"
+                    android:clipToOutline="true"
+                    android:outlineProvider="background"
+                    android:contentDescription="@string/profile_picture" />
+
+                <!-- Greeting text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hi_catherine"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Adventure card with background image -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/rounded_rectangle_background">
+
+                <!-- Background image -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/home_image"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/rounded_image_background"
+                    android:clipToOutline="true"
+                    android:outlineProvider="background"
+                    android:contentDescription="@string/adventure_background" />
+
+                <!-- Overlay text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="70dp"
+                    android:layout_marginBottom="90dp"
+                    android:fontFamily="@font/poppins_semi_bold_italic"
+                    android:gravity="center"
+                    android:text="@string/let_s_discover_a_new_nadventure"
+                    android:textAlignment="center"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <!-- Four circular icons in a row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="30dp">
+
+                <!-- Flight icon -->
+                <LinearLayout
+                    android:id="@+id/flightIconLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginEnd="10dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/circle_icon_background"
+                        android:src="@drawable/ic_flight"
+                        android:padding="16dp"
+                        app:tint="@color/dark_blue"
+                        android:contentDescription="Flight" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Flight"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <!-- Hotel icon -->
+                <LinearLayout
+                    android:id="@+id/hotelIconLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/circle_icon_background"
+                        android:src="@drawable/ic_booking"
+                        android:padding="16dp"
+                        app:tint="@color/dark_blue"
+                        android:contentDescription="Hotel" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hotel"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <!-- Countries icon -->
+                <LinearLayout
+                    android:id="@+id/countriesIconLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/circle_icon_background"
+                        android:src="@drawable/ic_country"
+                        android:padding="16dp"
+                        app:tint="@color/dark_blue"
+                        android:contentDescription="Countries" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Countries"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <!-- Train icon -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginStart="10dp">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/circle_icon_background"
+                        android:src="@drawable/ic_train"
+                        android:padding="16dp"
+                        app:tint="@color/dark_blue"
+                        android:contentDescription="Train" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Train"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Explore Destinations Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="@string/explore_destinations"
+                android:textColor="@android:color/white"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins_semi_bold_italic" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Paris Card -->
+                    <RelativeLayout
+                        android:layout_width="200dp"
+                        android:layout_height="240dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/rounded_background"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:id="@+id/parisImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:layout_alignParentTop="true"
+                            android:src="@drawable/paris"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_image_background"
+                            android:clipToOutline="true"
+                            android:outlineProvider="background"
+                            android:contentDescription="Paris" />
+
+                        <ImageView
+                            android:id="@+id/parisFavorite"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_margin="8dp"
+                            android:src="@drawable/ic_favorite"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:contentDescription="Favorite" />
+
+                        <LinearLayout
+                            android:id="@+id/parisInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/parisImage"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_location"
+                                android:layout_marginEnd="4dp"
+                                app:tint="@color/dark_blue"
+                                android:contentDescription="Location" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Paris"
+                                android:textColor="@android:color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_star"
+                                android:layout_marginEnd="4dp"
+                                app:tint="@color/dark_blue"
+                                android:contentDescription="Rating" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4.8"
+                                android:textColor="@android:color/white"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/parisInfo"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginStart="20dp"
+                            android:text="France"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                    <!-- Tokyo Card -->
+                    <RelativeLayout
+                        android:layout_width="200dp"
+                        android:layout_height="240dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/rounded_background"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:id="@+id/tokyoImage2"
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:layout_alignParentTop="true"
+                            android:src="@drawable/japan"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_image_background"
+                            android:clipToOutline="true"
+                            android:outlineProvider="background"
+                            android:contentDescription="Tokyo" />
+
+                        <ImageView
+                            android:id="@+id/tokyoFavorite2"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_margin="8dp"
+                            android:src="@drawable/ic_favorite"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:contentDescription="Favorite" />
+
+                        <LinearLayout
+                            android:id="@+id/tokyoInfo2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tokyoImage2"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_location"
+                                android:layout_marginEnd="4dp"
+                                app:tint="@color/dark_blue"
+                                android:contentDescription="Location" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Tokyo"
+                                android:textColor="@android:color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_star"
+                                android:layout_marginEnd="4dp"
+                                app:tint="@color/dark_blue"
+                                android:contentDescription="Rating" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4.7"
+                                android:textColor="@android:color/white"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tokyoInfo2"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginStart="20dp"
+                            android:text="Japan"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                    <!-- London Card -->
+                    <RelativeLayout
+                        android:layout_width="200dp"
+                        android:layout_height="240dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/rounded_background"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:id="@+id/londonImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:layout_alignParentTop="true"
+                            android:src="@drawable/england"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_image_background"
+                            android:clipToOutline="true"
+                            android:outlineProvider="background"
+                            android:contentDescription="London" />
+
+                        <ImageView
+                            android:id="@+id/londonFavorite"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_margin="8dp"
+                            android:src="@drawable/ic_favorite"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:contentDescription="Favorite" />
+
+                        <LinearLayout
+                            android:id="@+id/londonInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/londonImage"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_location"
+                                android:layout_marginEnd="4dp"
+                                app:tint="@color/dark_blue"
+                                android:contentDescription="Location" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="London"
+                                android:textColor="@android:color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_star"
+                                android:layout_marginEnd="4dp"
+                                app:tint="@color/dark_blue"
+                                android:contentDescription="Rating" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4.6"
+                                android:textColor="@android:color/white"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/londonInfo"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginStart="20dp"
+                            android:text="England"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                    <!-- Athens Card -->
+                    <RelativeLayout
+                        android:layout_width="200dp"
+                        android:layout_height="240dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/rounded_background"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:id="@+id/athensImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:layout_alignParentTop="true"
+                            android:src="@drawable/greece"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_image_background"
+                            android:clipToOutline="true"
+                            android:outlineProvider="background"
+                            android:contentDescription="Athens" />
+
+                        <ImageView
+                            android:id="@+id/athensFavorite"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_margin="8dp"
+                            android:src="@drawable/ic_favorite"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:contentDescription="Favorite" />
+
+                        <LinearLayout
+                            android:id="@+id/athensInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/athensImage"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_location"
+                                android:layout_marginEnd="4dp"
+                                app:tint="@color/dark_blue"
+                                android:contentDescription="Location" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Athens"
+                                android:textColor="@android:color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_star"
+                                android:layout_marginEnd="4dp"
+                                app:tint="@color/dark_blue"
+                                android:contentDescription="Rating" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4.5"
+                                android:textColor="@android:color/white"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/athensInfo"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginStart="20dp"
+                            android:text="Greece"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                    <!-- Rome Card -->
+                    <RelativeLayout
+                        android:layout_width="200dp"
+                        android:layout_height="240dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/rounded_background"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:id="@+id/romeImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:layout_alignParentTop="true"
+                            android:src="@drawable/italy"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_image_background"
+                            android:clipToOutline="true"
+                            android:outlineProvider="background"
+                            android:contentDescription="Rome" />
+
+                        <ImageView
+                            android:id="@+id/romeFavorite"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_margin="8dp"
+                            android:src="@drawable/ic_favorite"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:contentDescription="Favorite" />
+
+                        <LinearLayout
+                            android:id="@+id/romeInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/romeImage"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_location"
+                                android:layout_marginEnd="4dp"
+                                app:tint="@color/dark_blue"
+                                android:contentDescription="Location" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Rome"
+                                android:textColor="@android:color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_star"
+                                android:layout_marginEnd="4dp"
+                                app:tint="@color/dark_blue"
+                                android:contentDescription="Rating" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4.7"
+                                android:textColor="@android:color/white"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/romeInfo"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginStart="20dp"
+                            android:text="Italy"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                    <!-- Colombo Card -->
+                    <RelativeLayout
+                        android:layout_width="200dp"
+                        android:layout_height="240dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/rounded_background"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:id="@+id/colomboImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:layout_alignParentTop="true"
+                            android:src="@drawable/sri_lanka"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_image_background"
+                            android:clipToOutline="true"
+                            android:outlineProvider="background"
+                            android:contentDescription="Colombo" />
+
+                        <ImageView
+                            android:id="@+id/colomboFavorite"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_margin="8dp"
+                            android:src="@drawable/ic_favorite"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:contentDescription="Favorite" />
+
+                        <LinearLayout
+                            android:id="@+id/colomboInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/colomboImage"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_location"
+                                android:layout_marginEnd="4dp"
+                                app:tint="@color/dark_blue"
+                                android:contentDescription="Location" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Colombo"
+                                android:textColor="@android:color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_star"
+                                android:layout_marginEnd="4dp"
+                                app:tint="@color/dark_blue"
+                                android:contentDescription="Rating" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4.9"
+                                android:textColor="@android:color/white"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/colomboInfo"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginStart="20dp"
+                            android:text="Sri Lanka"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                    <!-- New York Card -->
+                    <RelativeLayout
+                        android:layout_width="200dp"
+                        android:layout_height="240dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/rounded_background"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:id="@+id/newYorkImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:layout_alignParentTop="true"
+                            android:src="@drawable/usa"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_image_background"
+                            android:clipToOutline="true"
+                            android:outlineProvider="background"
+                            android:contentDescription="New York" />
+
+                        <ImageView
+                            android:id="@+id/newYorkFavorite"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_margin="8dp"
+                            android:src="@drawable/ic_favorite"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:contentDescription="Favorite" />
+
+                        <LinearLayout
+                            android:id="@+id/newYorkInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/newYorkImage"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_location"
+                                android:layout_marginEnd="4dp"
+                                app:tint="@color/dark_blue"
+                                android:contentDescription="Location" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="New York"
+                                android:textColor="@android:color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_star"
+                                android:layout_marginEnd="4dp"
+                                app:tint="@color/dark_blue"
+                                android:contentDescription="Rating" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4.8"
+                                android:textColor="@android:color/white"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/newYorkInfo"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginStart="20dp"
+                            android:text="USA"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="200dp"
+                        android:layout_height="240dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/rounded_background"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:id="@+id/tokyoImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:layout_alignParentTop="true"
+                            android:src="@drawable/japan"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/rounded_image_background"
+                            android:clipToOutline="true"
+                            android:outlineProvider="background"
+                            android:contentDescription="Tokyo" />
+
+                        <ImageView
+                            android:id="@+id/tokyoFavorite"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_margin="8dp"
+                            android:src="@drawable/ic_favorite"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:contentDescription="Favorite" />
+
+                        <LinearLayout
+                            android:id="@+id/tokyoInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tokyoImage"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_location"
+                                android:layout_marginEnd="4dp"
+                                android:contentDescription="Location" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Tokyo"
+                                android:textColor="@color/dark_blue"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_star"
+                                android:layout_marginEnd="4dp"
+                                android:contentDescription="Rating" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4.7"
+                                android:textColor="@color/dark_blue"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tokyoInfo"
+                            android:layout_marginStart="20dp"
+                            android:text="Japan"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <!-- Best Offers Section Title -->
+            <TextView
+                android:id="@+id/bestOffersTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/best_offers"
+                android:textColor="@android:color/white"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins_semi_bold_italic" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/bestOffersRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"
+                android:layout_marginBottom="16dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_margin="8dp"
+	android:background="@drawable/rounded_background"
+	android:padding="12dp">
+
+	<ImageView
+		android:id="@+id/offerImage"
+		android:layout_width="match_parent"
+		android:layout_height="120dp"
+		android:scaleType="centerCrop"
+		android:background="@drawable/rounded_image_background"
+		android:clipToOutline="true"
+		android:contentDescription="Country image" />
+
+	<!-- Favorite icon overlay -->
+	<ImageView
+		android:id="@+id/offerFavorite"
+		android:layout_width="24dp"
+		android:layout_height="24dp"
+		android:layout_alignTop="@id/offerImage"
+		android:layout_alignEnd="@id/offerImage"
+		android:layout_margin="8dp"
+		android:src="@drawable/ic_favorite"
+		android:clickable="true"
+		android:focusable="true"
+		android:contentDescription="Favorite" />
+
+	<TextView
+		android:id="@+id/offerCountry"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/offerImage"
+		android:layout_marginTop="10dp"
+		android:text="Country"
+		android:textColor="@android:color/white"
+		android:textStyle="bold"
+		android:textSize="16sp" />
+
+	<TextView
+		android:id="@+id/offerCity"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/offerCountry"
+		android:layout_marginTop="4dp"
+		android:text="City"
+		android:textColor="@android:color/white"
+		android:textSize="14sp" />
+
+	<TextView
+		android:id="@+id/offerPrice"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/offerCity"
+		android:layout_marginTop="6dp"
+		android:text="$999"
+		android:textColor="@android:color/white"
+		android:textStyle="bold"
+		android:textSize="15sp" />
+
+</RelativeLayout>

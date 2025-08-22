@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- SkyWay App Colors -->
+    <color name="gradient_start">#0D043C</color>
+    <color name="gradient_mid1">#0A054E</color>
+    <color name="gradient_mid2">#2B1C83</color>
+    <color name="gradient_end">#5865D9</color>
+    <color name="button_gradient_start">#5865D9</color>
+    <color name="button_gradient_end">#2B1C83</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0B0</color>
+    <color name="transparent">#00000000</color>
+    
+    <!-- Modern UI Colors -->
+    <color name="dark_blue">#1A237E</color>
+    <color name="light_blue_background">#F8FCFF</color>
+    <color name="form_text_color">#333333</color>
+    <color name="hint_text_color">#666666</color>
+    <color name="success_green">#4CAF50</color>
+    <color name="error_red">#F44336</color>
+    <color name="search_card_bg">#908F8F</color>
+    <!-- Navigation Purple Theme -->
+    <color name="nav_purple_selected">#A873FF</color>
+    <color name="nav_purple_unselected">#6B2FB5</color>
+</resources>

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Top bar -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_back"
+                android:background="@drawable/circle_icon_background"
+                android:padding="8dp"
+                android:contentDescription="Back" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/backBtn"
+                android:layout_marginStart="12dp"
+                android:text="@string/book_your_flight"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/profileThumb"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/profile_pic"
+                android:background="@drawable/circle_profile_background"
+                android:scaleType="centerCrop"
+                android:clipToOutline="true"
+                android:outlineProvider="background"
+                android:contentDescription="Profile" />
+        </RelativeLayout>
+
+        <!-- Banner Image -->
+        <ImageView
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/flight"
+            android:scaleType="centerCrop"
+            android:background="@drawable/rounded_image_background"
+            android:clipToOutline="true"
+            android:contentDescription="Flight banner" />
+
+        <!-- Form -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Departure"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp" />
+
+            <AutoCompleteTextView
+                android:id="@+id/departureField"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/modern_input_background"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="@color/form_text_color"
+                android:hint="Select departure"
+                android:textColorHint="@color/hint_text_color" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Arrival"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="6dp" />
+
+            <AutoCompleteTextView
+                android:id="@+id/arrivalField"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/modern_input_background"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="@color/form_text_color"
+                android:hint="Select arrival"
+                android:textColorHint="@color/hint_text_color"
+                android:inputType="none"
+                android:focusable="true"
+                android:clickable="true" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/departure_time"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="6dp" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/departureTimeField"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/modern_input_background"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:textColor="@color/form_text_color"
+                        android:hint="Select"
+                        android:textColorHint="@color/hint_text_color" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/arrival_time"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="6dp" />
+
+                    <EditText
+                        android:id="@+id/arrivalTimeField"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:enabled="false"
+                        android:focusable="false"
+                        android:cursorVisible="false"
+                        android:background="@drawable/modern_input_background"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:textColor="@color/form_text_color"
+                        android:hint="Auto"
+                        android:textColorHint="@color/hint_text_color" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Passengers"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/passengersField"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/modern_input_background"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:inputType="number"
+                android:textColor="@color/form_text_color"
+                android:hint="Number of passengers"
+                android:textColorHint="@color/hint_text_color" />
+
+            <TextView
+                android:id="@+id/errorText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/error_red"
+                android:layout_marginTop="8dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/bookFlightButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text="@string/book_flight"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:background="@drawable/button_gradient"
+                android:drawablePadding="8dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
