@@ -17,6 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.example.skyway.fragments.SearchFragment
 import com.example.skyway.FlightBookingFragment
 import com.example.skyway.fragments.HotelsFragment
+import com.example.skyway.fragments.ProfileFragment
 
 class HomeFragment : Fragment() {
     override fun onCreateView(
@@ -82,6 +83,24 @@ class HomeFragment : Fragment() {
                 .replace(R.id.fragmentContainer, HotelsFragment())
                 .addToBackStack(null)
                 .commit()
+        }
+
+        // Navigate to Profile when profile shortcut icon pressed
+        view.findViewById<LinearLayout>(R.id.profileIconLayout)?.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, ProfileFragment())
+                .addToBackStack(null)
+                .commit()
+            (activity?.findViewById<BottomNavigationView>(R.id.bottomNavigation))?.selectedItemId = R.id.nav_profile
+        }
+
+        // Navigate to Profile when top profile image tapped
+        view.findViewById<ImageView>(R.id.homeProfileThumb)?.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, ProfileFragment())
+                .addToBackStack(null)
+                .commit()
+            (activity?.findViewById<BottomNavigationView>(R.id.bottomNavigation))?.selectedItemId = R.id.nav_profile
         }
     }
 

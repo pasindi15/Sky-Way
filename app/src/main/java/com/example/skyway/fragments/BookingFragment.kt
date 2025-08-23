@@ -32,6 +32,13 @@ class BookingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        view.findViewById<android.widget.ImageView>(R.id.profileThumb)?.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, ProfileFragment())
+                .addToBackStack(null)
+                .commit()
+            activity?.findViewById<com.google.android.material.bottomnavigation.BottomNavigationView>(R.id.bottomNavigation)?.selectedItemId = R.id.nav_profile
+        }
         val ticketsContainer: LinearLayout = view.findViewById(R.id.ticketsContainer)
         // Fallback manual population (not using RecyclerView to keep simple per layout)
         generateTickets()

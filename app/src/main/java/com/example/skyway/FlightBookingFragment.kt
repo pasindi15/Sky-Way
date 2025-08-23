@@ -148,8 +148,12 @@ class FlightBookingFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_flight_booking, container, false)
         bindViews(view)
         setupAutoComplete()
-        setupListeners()
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupListeners()
     }
 
     private fun bindViews(view: View) {
@@ -196,8 +200,16 @@ class FlightBookingFragment : Fragment() {
         arrivalField.addTextChangedListener(watcher)
         passengersField.addTextChangedListener(watcher)
 
-        bookButton.setOnClickListener { attemptBooking() }
-        backBtn.setOnClickListener { activity?.onBackPressedDispatcher?.onBackPressed() }
+    bookButton.setOnClickListener { attemptBooking() }
+    backBtn.setOnClickListener { activity?.onBackPressedDispatcher?.onBackPressed() }
+    // Now guaranteed non-null since called after view creation
+    requireView().findViewById<ImageView>(R.id.profileThumb)?.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, com.example.skyway.fragments.ProfileFragment())
+                .addToBackStack(null)
+                .commit()
+            activity?.findViewById<com.google.android.material.bottomnavigation.BottomNavigationView>(R.id.bottomNavigation)?.selectedItemId = R.id.nav_profile
+        }
     }
 
     private fun validateForm() {
@@ -223,7 +235,7 @@ class FlightBookingFragment : Fragment() {
             showError("Departure and arrival can't match")
             return
         }
-        Toast.makeText(requireContext(), "Flight booked!", Toast.LENGTH_SHORT).show()
+    Toast.makeText(requireContext(), "Choose flight", Toast.LENGTH_SHORT).show()
         // Go straight to BookingFragment (existing booking screen)
         parentFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainer, com.example.skyway.fragments.BookingFragment())

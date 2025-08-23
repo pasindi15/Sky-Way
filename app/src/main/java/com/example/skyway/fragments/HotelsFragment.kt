@@ -26,6 +26,15 @@ class HotelsFragment : Fragment() {
         recycler.adapter = SearchDestinationsAdapter(createHotels())
         recycler.setHasFixedSize(true)
 
+        // Profile thumb navigation
+        view.findViewById<android.widget.ImageView>(R.id.hotelsProfileThumb)?.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, ProfileFragment())
+                .addToBackStack(null)
+                .commit()
+            activity?.findViewById<BottomNavigationView>(R.id.bottomNavigation)?.selectedItemId = R.id.nav_profile
+        }
+
         // Back navigation
         view.findViewById<View>(R.id.hotelsBack)?.setOnClickListener {
             parentFragmentManager.beginTransaction()

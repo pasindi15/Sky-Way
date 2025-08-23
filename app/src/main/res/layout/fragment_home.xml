@@ -35,7 +35,10 @@
                     android:scaleType="centerCrop"
                     android:clipToOutline="true"
                     android:outlineProvider="background"
-                    android:contentDescription="@string/profile_picture" />
+                    android:contentDescription="@string/profile_picture"
+                    android:id="@+id/homeProfileThumb"
+                    android:clickable="true"
+                    android:focusable="true" />
 
                 <!-- Greeting text -->
                 <TextView
@@ -187,29 +190,32 @@
 
                 </LinearLayout>
 
-                <!-- Train icon -->
+                <!-- Profile shortcut icon (replacing train) -->
                 <LinearLayout
+                    android:id="@+id/profileIconLayout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:layout_marginStart="10dp">
+                    android:layout_marginStart="10dp"
+                    android:clickable="true"
+                    android:focusable="true">
 
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginBottom="8dp"
                         android:background="@drawable/circle_icon_background"
-                        android:src="@drawable/ic_train"
+                        android:src="@drawable/ic_profile_selected"
                         android:padding="16dp"
                         app:tint="@color/dark_blue"
-                        android:contentDescription="Train" />
+                        android:contentDescription="Profile" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Train"
+                        android:text="Profile"
                         android:textColor="@android:color/white"
                         android:textSize="14sp" />
 

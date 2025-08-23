@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.skyway.R
 import com.example.skyway.adapters.SearchDestinationsAdapter
 import com.example.skyway.model.SearchDestination
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class SearchFragment : Fragment() {
     override fun onCreateView(
@@ -26,6 +27,14 @@ class SearchFragment : Fragment() {
         recycler.layoutManager = GridLayoutManager(requireContext(), 2)
         recycler.adapter = SearchDestinationsAdapter(createDestinations())
         recycler.setHasFixedSize(true)
+
+        view.findViewById<android.widget.ImageView>(R.id.searchProfileThumb)?.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, ProfileFragment())
+                .addToBackStack(null)
+                .commit()
+            activity?.findViewById<BottomNavigationView>(R.id.bottomNavigation)?.selectedItemId = R.id.nav_profile
+        }
     }
 
     private fun createDestinations(): List<SearchDestination> = listOf(

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.skyway.model.Ticket
 
@@ -31,5 +32,10 @@ class TicketDetailFragment : Fragment() {
         view.findViewById<TextView>(R.id.detailDepCode).text = depCode
         view.findViewById<TextView>(R.id.detailArrTime).text = arrTime
         view.findViewById<TextView>(R.id.detailArrCode).text = arrCode
+
+        // Print action toast
+        view.findViewById<TextView>(R.id.printButton)?.setOnClickListener {
+            Toast.makeText(requireContext(), "Printed successfully", Toast.LENGTH_SHORT).show()
+        }
     }
 }
