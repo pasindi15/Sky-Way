@@ -15,12 +15,19 @@
 
         <TextView
             android:id="@+id/bookingsTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/profileThumb"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="16dp"
+            android:layout_toLeftOf="@id/profileThumb"
+            android:layout_toRightOf="@id/topBar"
             android:text="@string/bookings_title"
             android:textColor="@android:color/white"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:maxLines="1" />
 
         <ImageView
             android:id="@+id/profileThumb"
@@ -32,7 +39,7 @@
             android:scaleType="centerCrop"
             android:clipToOutline="true"
             android:outlineProvider="background"
-            android:contentDescription="Profile" />
+            android:contentDescription="@string/profile_picture" />
     </RelativeLayout>
 
     <ScrollView
@@ -61,7 +68,7 @@
                     android:scaleType="centerCrop"
                     android:background="@drawable/rounded_image_background"
                     android:clipToOutline="true"
-                    android:contentDescription="Banner" />
+                    android:contentDescription="@string/select_your_flight" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -91,7 +98,9 @@
                     android:layout_height="54dp"
                     android:layout_weight="1"
                     android:background="@drawable/modern_input_background"
-                    android:hint="Date"
+                    android:hint="@string/date"
+                    android:inputType="text"
+                    android:autofillHints="username"
                     android:paddingStart="16dp"
                     android:paddingEnd="16dp"
                     android:textColor="@color/form_text_color"
@@ -107,8 +116,9 @@
                     android:layout_height="54dp"
                     android:layout_weight="1"
                     android:background="@drawable/modern_input_background"
-                    android:hint="Passengers"
+                    android:hint="@string/passengers"
                     android:inputType="number"
+                    android:autofillHints="number"
                     android:paddingStart="16dp"
                     android:paddingEnd="16dp"
                     android:textColor="@color/form_text_color"
